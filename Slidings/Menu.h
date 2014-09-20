@@ -1,5 +1,5 @@
 //
-//  MainAppDelegate.h
+//  Menu.h
 //  Slidings
 //
 //  Created by Rahul on 20/08/14.
@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainAppDelegate : UIResponder <UIApplicationDelegate>
+@interface Menu : UIViewController
+{
+    NSArray * MenuItems;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) IBOutlet UITableView *tables;
 
 @end

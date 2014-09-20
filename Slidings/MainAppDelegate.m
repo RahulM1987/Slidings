@@ -7,6 +7,9 @@
 //
 
 #import "MainAppDelegate.h"
+#import "Slides.h"
+#import "Menu.h"
+#import "RESideMenu.h"
 
 @implementation MainAppDelegate
 
@@ -14,7 +17,14 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    Slides * slides = [[Slides alloc]init];
+    Menu * menu = [[Menu alloc]init];
+    RESideMenu * sider = [[RESideMenu alloc]initWithContentViewController:slides menuViewController:menu];
+    self.window.rootViewController = sider;
+    
+    
+    //self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
